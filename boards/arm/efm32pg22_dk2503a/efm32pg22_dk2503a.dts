@@ -1,0 +1,106 @@
+/*
+ * Copyright (c) 2022 Immanuel Huebner   
+ *
+ * SPDX-License-Identifier: Apache-2.0
+ */
+
+/dts-v1/;
+#include <silabs/efm32pg22c200f512im40.dtsi>
+
+/ {
+	model = "Silicon Labs EFM32PG22 DK2503A board"; 
+	compatible = "silabs,efm32pg22_dk2503a", "silabs,efm32pg22";
+	chosen {
+		zephyr,console = &usart0;
+		zephyr,shell-uart = &usart0;
+		zephyr,sram = &sram0;
+		zephyr,flash = &flash0;
+		watchdog0 = &wdog0;
+	};
+
+	/* These aliases are provided for compatibility with samples */
+	aliases {
+		led0 = &led0;
+		sw0 = &button0;
+	};
+
+	leds {
+		compatible = "gpio-leds";
+		led0: led_0 {
+			gpios = <&gpioa 4 0>;
+			label = "LED";
+		};
+	};
+
+	buttons {
+		compatible = "gpio-keys";
+		button0: button_0 {
+			/* gpio flags need validation */
+			gpios = <&gpiob 3 GPIO_ACTIVE_LOW>;
+			label = "User Push Button";
+		};
+	};
+};
+
+&cpu0 {
+	clock-frequency = <40000000>;
+};
+
+&usart0 {
+	current-speed = <115200>;
+	location-rx = <GECKO_LOCATION(0) GECKO_PORT_A GECKO_PIN(6)>;
+	location-tx = <GECKO_LOCATION(0) GECKO_PORT_A GECKO_PIN(5)>;
+	status = "okay";
+};
+
+&i2c0 {
+	location-sda = <GECKO_LOCATION(0) GECKO_PORT_D GECKO_PIN(2)>;
+	location-scl = <GECKO_LOCATION(0) GECKO_PORT_D GECKO_PIN(3)>;
+	status = "okay";
+};
+
+&rtcc0 {
+	prescaler = <1>;
+	status = "okay";
+};
+
+&gpio {
+	location-swo = <0>;
+	status = "okay";
+};
+
+&gpioa {
+	status = "okay";
+};
+
+&gpiob {
+	status = "okay";
+};
+
+&gpiod {
+	status = "okay";
+};
+
+&wdog0 {
+	status = "okay";
+};
+
+&flash0 {
+
+	partitions {
+		compatible = "fixed-partitions";
+		#address-cells = <1>;
+		#size-cells = <1>;
+
+		/* Set 6Kb of storage at the end of the 512Kb of flash */
+		storage_partition: partition@7e800 {
+			label = "storage";
+			reg = <0x0007e800 0x00001800>;
+		};
+
+	};
+};
+
+&trng0 {
+		status = "okay";
+};
