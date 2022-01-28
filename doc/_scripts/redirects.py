@@ -33,6 +33,7 @@ REDIRECTS = [
     ('boards/arm/colibri_imx7d_m4/doc/colibri_imx7d_m4', 'boards/arm/colibri_imx7d_m4/doc/index'),
     ('boards/arm/disco_l475_iot1/doc/disco_l475_iot1', 'boards/arm/disco_l475_iot1/doc/index'),
     ('boards/arm/dragino_lsn50/doc/dragino_lsn50', 'boards/arm/dragino_lsn50/doc/index'),
+    ('boards/arm/efm32pg22_dk2503a/doc/efm32pg22_dk2503a', 'boards/arm/efm32pg22_dk2503a/doc/index'),
     ('boards/arm/efm32wg_stk3800/doc/efm32wg_stk3800', 'boards/arm/efm32wg_stk3800/doc/index'),
     ('boards/arm/efr32_slwstk6061a/doc/efr32_slwstk6061a', 'boards/arm/efr32_slwstk6061a/doc/index'),
     ('boards/arm/frdm_k64f/doc/frdm_k64f', 'boards/arm/frdm_k64f/doc/index'),

@@ -1,0 +1,21 @@
+# EFM32PG22 DK2503A board 
+
+# Copyright (c) 2022 Immanuel Huebner   
+# SPDX-License-Identifier: Apache-2.0
+
+if BOARD_EFM32PG22_DK2503A
+
+config BOARD
+	default "efm32pg22_dk2503a"
+
+config CMU_HFXO_FREQ
+	default 40000000
+
+config CMU_LFXO_FREQ
+	default 32768
+
+config COUNTER_GECKO_RTCC
+	default y
+	depends on COUNTER
+
+endif # BOARD_EFM32PG22_DK2503A
