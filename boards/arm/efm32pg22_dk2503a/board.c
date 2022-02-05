@@ -9,6 +9,7 @@
 #include <drivers/gpio.h>
 #include <sys/printk.h>
 
+
 static int efm32pg22_dk2503a_init(const struct device *dev)
 {
 

@@ -56,9 +56,9 @@
 			};
 		};
 
-		usart0: usart@40058000 { /* USART0 */
+		usart0: usart@4005c000 { /* USART0 */
 			compatible = "silabs,gecko-usart";
-			reg = <0x40058000 0x400>;
+			reg = <0x4005c000 0x400>;
 			interrupts = <13 0>, <14 0>;
 			interrupt-names = "rx", "tx";
 			peripheral-id = <0>;
@@ -66,9 +66,9 @@
 			label = "USART_0";
 		};
 
-		usart1: usart@4005c000 { /* USART1 */
+		usart1: usart@40060000 { /* USART1 */
 			compatible = "silabs,gecko-usart";
-			reg = <0x4005c000 0x400>;
+			reg = <0x40060000 0x400>;
 			interrupts = <15 0>, <16 0>;
 			interrupt-names = "rx", "tx";
 			peripheral-id = <1>;
@@ -168,6 +168,7 @@
 			interrupts = <43 0>;
 			status = "disabled";
 		};
+
 	};
 };
 

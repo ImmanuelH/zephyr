@@ -114,7 +114,7 @@ manifest:
       groups:
         - hal
     - name: hal_silabs
-      revision: be39d4eebeddac6e18e9c0c3ba1b31ad1e82eaed
+      url: https://github.com/ImmanuelH/hal_silabs.git
       path: modules/hal/silabs
       groups:
         - hal

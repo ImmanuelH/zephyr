@@ -10,6 +10,7 @@
 / {
 	model = "Silicon Labs EFM32PG22 DK2503A board"; 
 	compatible = "silabs,efm32pg22_dk2503a", "silabs,efm32pg22";
+
 	chosen {
 		zephyr,console = &usart0;
 		zephyr,shell-uart = &usart0;
@@ -101,6 +102,3 @@
 	};
 };
 
-&trng0 {
-		status = "okay";
-};
